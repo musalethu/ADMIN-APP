@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
+    <title>ADMIN APP</title>
+</head>
+
+<body>
+<form id="container">
+   
+<input name="name" type="text" id="name" placeholder=" INSERT NAME" >
+<input name="surname" type="text" id="surname" placeholder=" INSERT SURNAME">
+<input name="position" type="text" id="position" placeholder=" INSERT POSITION ">
+<div name="pleasevalidateID" onsubmit="returnvalidateID();">
+    SA ID number: <input id="ID number" type="text" name="idnumber" placeholder="ID number" />
+    <input name="annually" type="text"  id="salaryAnnually" value= "" placeholder="INSERT MONTHS IN A YEAR"/>   
+    <input name="salary" type="text" id="Monthlysalary" value ="" placeholder=" INSERT MONTHLY SALARY" />
+    <button id="calcSalary" value="calculate" onclick="calcSalary()">Calculate</button>
+    <button id="submit">SUBMIT</button>
+    <p id="results"></p>
+  <br/><br/>
+
+</div>
+</form>
+
+<table id="Records-list">
+    <thead>
+        <tr>
+            <th>name</th>
+            <th>surname</th>
+            <th>position</th>
+            <th>idnumber</th>
+            <th>annually</th>
+            <th>salary</th>
+            <th>CALCULATE</th>
+        </tr>
+    </thead>
+     <tbody >
+
+  </tbody>
+
+</table>
+</body>
+</html>
+
