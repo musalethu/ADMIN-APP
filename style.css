@@ -1,9 +1,8 @@
-body{
-    background-color:lightgoldenrodyellow
+body {
+  background-color: lightgoldenrodyellow;
 }
 
-
-input[type="text"]{
+input[type="text"] {
   width: 100%;
   padding: 12px 20px;
   margin: 12px 0;
@@ -15,6 +14,18 @@ input[type="text"]{
   font-family: monospace;
 }
 
+input[type="SUBMIT"] {
+  width: 20%;
+  background-color: grey;
+  color: black;
+  padding: 10px 16px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: monospace;
+  font-size: large;
+}
 body > table {
   width: 80%;
 }
@@ -37,10 +48,10 @@ table.list thead > tr {
   font-family: monospace;
   font-size: large;
 }
-#submit{
-  width:40%;
+/* #submit {
+  width: 40%;
   padding: 12px 20px;
   margin: 12px 0;
   margin-bottom: 1rem;
   margin-top: 1rem;
-}
+} */
