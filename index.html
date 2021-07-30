@@ -1,49 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js" defer></script>
     <title>ADMIN APP</title>
-</head>
+  </head>
 
-<body>
-<form id="container">
-   
-<input name="name" type="text" id="name" placeholder=" INSERT NAME" >
-<input name="surname" type="text" id="surname" placeholder=" INSERT SURNAME">
-<input name="position" type="text" id="position" placeholder=" INSERT POSITION ">
-<div name="pleasevalidateID" onsubmit="returnvalidateID();">
-    SA ID number: <input id="ID number" type="text" name="idnumber" placeholder="ID number" />
-    <input name="annually" type="text"  id="salaryAnnually" value= "" placeholder="INSERT MONTHS IN A YEAR"/>   
-    <input name="salary" type="text" id="Monthlysalary" value ="" placeholder=" INSERT MONTHLY SALARY" />
-    <button id="calcSalary" value="calculate" onclick="calcSalary()">Calculate</button>
-    <button id="submit">SUBMIT</button>
-    <p id="results"></p>
-  <br/><br/>
+  <body>
+    <div class="tab">
+    <!-- <form onsubmit="onformsubmit(event)" autocomplete="off"> -->
+      <div>
+        Name :<input type="text" name="Name" id="name"  onkeyup="lettersOnly(this)" required>
+      </div>
 
-</div>
-</form>
+      <div>
+        Surname :<input
+          type="text"
+          name="Surname"
+          id="surname"
+          placeholder="Enter surname"
+          onkeyup="lettersOnly(this)"
+          required/>
+      </div>
+      <div>
+       
+       Position: <input
+          type="text"
+          name="position"
+          id="Position"
+          placeholder=" Enter Job Position"
+          onkeyup="lettersOnly(this)"
+          required
+        />
+      </div>
+      <div>
+        <div name="pleasevalidateID" onsubmit="returnvalidateID();">
+         
+          ID NUMBER:<input
+            class="input"
+            type="text"
+            name="idnumber"
+            id="IDnumber"
+            placeholder="Enter South African ID"
+          
+            maxlength="13"
+            required
+          />
+        </div>
+      </div>
 
-<table id="Records-list">
-    <thead>
+      <div>
+       
+        MONTHLY SALARY:<input
+        name="months"
+        id="Monthlysalary"
+          type="text"
+          class="input"
+          maxlength="2"
+          placeholder="Enter months per year"
+          required
+        />
+      </div>
+      <div>
+       
+        ANNUAL SALARY:<input
+          type="text"
+          class="input"
+          name="salary"
+          id="salaryAnnually"
+          placeholder="Enter Salary"
+          maxlength="6"
+          required
+        >
+        <button id="calcSalary" value="calculate" onclick="calcSalary()">
+          Calculate
+        </button>
+        <input type="text" name="calculate" id="CALCULATE" />
+        <br /><br />
+        <button onclick="addHtmlTableRow()">ADD</button>
+        <button>EDIT</button>
+        <button>REMOVE</button>
+        <!-- <button type="submit" id="submit">SUBMIT</button> -->
+        <!-- <div class="form-action-buttons">
+          <input type="SUBMIT" value="SUBMIT" />
+        </div> -->
+      </div>
+      </div>
+    </form>
+    <div class="container">
+      <div class="tab-tab-1"> 
+      <table id="table">
         <tr>
-            <th>name</th>
-            <th>surname</th>
-            <th>position</th>
-            <th>idnumber</th>
-            <th>annually</th>
-            <th>salary</th>
-            <th>CALCULATE</th>
+          <th>Name</th>
+          <th>Surname</th>
+          <th>Position</th>
+          <th>ID NUMBER</th>
+          <th>MONTHLY SALARY</th>
+          <th>ANNUAL SALARY</th>
+          <th>Calculate</th>
         </tr>
-    </thead>
-     <tbody >
-
-  </tbody>
-
-</table>
-</body>
+      </table>
+     
+      </div>
+      </div>
+  </body>
 </html>
-
