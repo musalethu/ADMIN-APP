@@ -1,60 +1,93 @@
-function calcSalary() {
-  var salary_element = document.getElementById("Monthlysalary");
-  var salary = parseInt(salary_element.value);
-  var annually_element = document.getElementById("salaryAnnually");
-  var annually = parseInt(annually_element.value);
-  
-  var calculate = salary * annually * 12;
-  document.getElementById("CALCULATE").innerHTML = calculate;
-}
+let button = document.getElementById("calcSalary");
+let ADD = document.getElementById('ADD');
+let p = document.getElementById('results');
+table = document.getElementById("table");
 var selectedRow = null;
 var form = [];
+
+var rIndex;
+
+// function calcSalary() {
+//   var salary_element = document.getElementById("Monthlysalary");
+//   var salary = parseInt(salary_element.value);
+//   var annually_element = document.getElementById("salaryAnnually");
+//   var annually = parseInt(annually_element.value);
+
+//   var calculate = salary * annually * 12;
+//   document.getElementById("CALCULATE").innerHTML = calculate;
+// }
+// function validateID() {
+//   var cb = document.forms["pleasevalidateID"]["idnumber"].checked;
+//   if (cb) {
+//     var ex =
+//       /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
+//   } else {
+//     var ex = /^[0-9]{1,}$/;
+
+//   }
+
+//   var theIDnumber = document.form["pleasevalidateID"]["idnumber"].value;
+//   if (ex.test(theIDnumber) == false) {
+//     alert("Please supply a valid ID number");
+//     return false;
+//   }
+//   alert(theIDnumber + " a valid ID number");
+
+//   return false;
+// }
 
 // function onformsubmit(event) {
 //   event.preventDefault();
 
-  $(".input").keyup(function () {
-    if (!this.value.match(/[0-9]/)) {
-      this.value = this.value.replace(/[^0-9]/g, "");
-    }
-  });
+function addHtmlTableRow() {
+  var newRow = table.insertRow(table.length),
+    cell1 = newRow.insertCell(0),
+    cell2 = newRow.insertCell(1),
+    cell3 = newRow.insertCell(2),
+    cell4 = newRow.insertCell(3),
+    cell5 = newRow.insertCell(4),
+    cell6 = newRow.insertCell(5),
+    cell7 = newRow.insertCell(6),
+    
+    name = document.getElementById("name").value;
+    surname = document.getElementById("surname").value;
+    Position = document.getElementById("Position").value;
+    IDnumber = document.getElementById("IDnumber").value;
+    varA = document.getElementById("varA").value;
+    varB = document.getElementById("varB").value;
+    averageAnnually= document.getElementById("averageAnnually").value
 
-  function validateID() {
-    var cb = document.forms["pleasevalidateID"]["idnumber"].checked;
-    if (cb) {
-      var ex =
-        /^(((\d{2}((0[13578]|1[02])(0[1-9]|[12]\d|3[01])|(0[13456789]|1[012])(0[1-9]|[12]\d|30)|02(0[1-9]|1\d|2[0-8])))|([02468][048]|[13579][26])0229))(( |-)(\d{4})( |-)(\d{3})|(\d{7}))/;
-    } else {
-      var ex = /^[0-9]{1,}$/;
-    }
+  cell2.innerHTML = surname;
+  cell3.innerHTML = Position;
+  cell4.innerHTML = IDnumber;
+  cell5.innerHTML = varA;
+  cell6.innerHTML = varB;
+  cell7.innerHTML = averageAnnually
+ 
+}
+function multiplyNumbers(varA, varB) {
+  var a = document.getElementById (varA).value;
+  var b = document.getElementById(varB).value;
+  var c = Number(a) * Number(b);
+  document.getElementById("averageAnnually").innerHTML = c;
 
-    functionaddHtmlTableRow();
-    {
-      var newRow = table.insertRow(table.length),
-        cell1 = newRow.insertCell(0),
-        cell2 = newRow.insertCell(1),
-        cell3 = newRow.insertCell(2),
-        cell4 = newRow.insertCell(3),
-        cell5 = newRow.insertCell(4),
-        cell6 = newRow.insertCell(5),
-        cell7 = newRow.insertCell(6),
-        name = document.getElementById("name").value;
-      surname = document.getElementById("surname").value;
-      position = document.getElementById("position").value;
-      idnumber = document.getElementById("IDnumber").value;
-      months = document.getElementById("Monthlysalary").value;
-      salary = document.getElementById("salaryAnnually").value;
-      calculate = document.getElementById("calcSalary").value;
+}
 
-      cell1.innerHTML = name;
-      cell2.innerHTML = surname;
-      cell3.innerHTML = position;
-      cell4.innerHTML = IDnumber;
-      cell5.innerHTML = Monthlysalary;
-      cell6.innerHTML = salaryAnnually;
-      cell7.innerHTML = calcSalary;
-    }
-
+function displaysEmployeeInfo() {
+  let list = document.getElementById("table");
+  list.innerHTML = "";
+  var newRow = table.insertRow(table.length);
+  for (let i = 0; i < employeeList.length; i++) {
+    list.innerHTML += `<li>
+         <h1>${employeeList[i].name}</h1>
+        <h2>${employeeList[i].Surname}</h2>
+         <h3>${employeeList[i].Position}</h3>
+        // <h4>${employeeList[i].IDnumber} </h4>
+      //  <h5>${employeeList[i].varA} </h5>
+      //    <h6>${employeeList[i].varB} </h6>
+        <h7>${employeeList[i].averageAnnually}</h7>
+        </li>`;
+  }
     //   var formData = readformData();
     //   if (
     //     formData.name !== "" &&
@@ -92,16 +125,6 @@ var form = [];
     //   formData["annually"] = document.getElementById("salaryAnnually").value;
     //   formData["salary"] = document.getElementById("Monthlysalary").value;
     //   return formData;
-    // }
-
-    //   var theIDnumber = document.form["pleasevalidateme"]["idnumber"].value;
-    //   if (ex.test(theIDnumber) == false) {
-    //     alert("Please supply a valid ID number");
-    //     return false;
-    //   }
-    //   alert(theIDnumber + " a valid ID number");
-
-    //   return false;
     // }
 
     // let resertForm = resertForm();
@@ -152,9 +175,6 @@ var form = [];
     // let IDnumber = document.getElementById("ID number");
     // let salaryAnnually = document.getElementById("salaryAnnually");
     // let Monthlysalary = document.getElementById("Monthlysalary");
-    // let button = document.getElementById("calcSalary");
-    // let submit = document.getElementById('submit');
-    // let p = document.getElementById('results')
 
     // var employeeList = [];
     // var employeeIndex = 0;
@@ -179,14 +199,14 @@ var form = [];
     //   var table = document.getElementById("Records-list").getElementsByTagName("tbody")[0];
     //   var newRow = table.insertRow(table.length);
     //   `<li>
-    //     <h1>${employeeList[i].name}</h1>
-    //     <h2>${employeeList[i].surname}</h2>
-    //     <h3>${employeeList[i].position}</h3>
-    //     <h4>${employeeList[i].IDnumber} </h4>
-    //     <h5>${employeeList[i].salaryAnnually} </h5>
-    //     <h6>${employeeList[i].Monthlysalary} </h6>
-    //     <button onclick="editEmployee(${i})">Edit</button>
-    //     </li>`;
+    // //     <h1>${employeeList[i].name}</h1>
+    // //     <h2>${employeeList[i].surname}</h2>
+    // //     <h3>${employeeList[i].position}</h3>
+    // //     <h4>${employeeList[i].IDnumber} </h4>
+    // //     <h5>${employeeList[i].salaryAnnually} </h5>
+    // //     <h6>${employeeList[i].Monthlysalary} </h6>
+    // //     <button onclick="editEmployee(${i})">Edit</button>
+    // //     </li>`;
   }
   // function insertNewRecords(data) {
   //   var table = document
@@ -207,3 +227,4 @@ var form = [];
   //   cell6.innerHTML = data.Monthlysalary;
   //   cell7 = newRow.insertCell(6);
   //   cell7.innerHTML = `<a onClick=" onEDIT(this)">EDIT</a> `:
+
