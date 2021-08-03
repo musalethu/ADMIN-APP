@@ -10,10 +10,10 @@
   </head>
 
   <body>
-    <div class="tab">
-    <!-- <form onsubmit="onformsubmit(event)" autocomplete="off"> -->
+    <div class="tab" autocomplete="off">
+      
       <div>
-        Name :<input type="text" name="Name" id="name"  onkeyup="lettersOnly(this)" required>
+        Name :<input type="text" name="name" id="name" placeholder="Enter surname" required>
       </div>
 
       <div>
@@ -22,7 +22,6 @@
           name="Surname"
           id="surname"
           placeholder="Enter surname"
-          onkeyup="lettersOnly(this)"
           required/>
       </div>
       <div>
@@ -32,23 +31,20 @@
           name="position"
           id="Position"
           placeholder=" Enter Job Position"
-          onkeyup="lettersOnly(this)"
           required
         />
       </div>
       <div>
-        <div name="pleasevalidateID" onsubmit="returnvalidateID();">
-         
+        <div>
           ID NUMBER:<input
             class="input"
-            type="text"
+            type="number"
             name="idnumber"
             id="IDnumber"
             placeholder="Enter South African ID"
-          
             maxlength="13"
-            required
-          />
+
+          >
         </div>
       </div>
 
@@ -56,33 +52,35 @@
        
         MONTHLY SALARY:<input
         name="months"
-        id="Monthlysalary"
-          type="text"
-          class="input"
+        id="varA"
+          type="number "
+          class="Monthlysalary"
           maxlength="2"
           placeholder="Enter months per year"
-          required
+        
         />
       </div>
       <div>
        
         ANNUAL SALARY:<input
-          type="text"
-          class="input"
+          type="number"
+          class="salaryAnnually"
           name="salary"
-          id="salaryAnnually"
+          id="varB"
           placeholder="Enter Salary"
           maxlength="6"
-          required
         >
-        <button id="calcSalary" value="calculate" onclick="calcSalary()">
+          <input type="button" value="Add" onclick="multiplyNumbers('varA', 'varB')"></input>
+          <h1 name="calculate" id="averageAnnually"></h1>
+        <button onclick="addHtmlTableRow()"onclick="multiplyNumbers(varA, varB)">ADD</button>
+        <button>EDIT</button>
+        <button>REMOVE</button>
+
+        <!-- <button id="calcSalary" value="calculate" onclick="calcSalary()">
           Calculate
         </button>
         <input type="text" name="calculate" id="CALCULATE" />
-        <br /><br />
-        <button onclick="addHtmlTableRow()">ADD</button>
-        <button>EDIT</button>
-        <button>REMOVE</button>
+        <br /><br /> -->
         <!-- <button type="submit" id="submit">SUBMIT</button> -->
         <!-- <div class="form-action-buttons">
           <input type="SUBMIT" value="SUBMIT" />
