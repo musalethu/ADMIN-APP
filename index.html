@@ -13,7 +13,7 @@
     <div class="tab" autocomplete="off">
       
       <div>
-        Name :<input type="text" name="name" id="name" placeholder="Enter surname" required>
+        Name :<input type="text" name="name" id="name" placeholder="Enter Name" required>
       </div>
 
       <div>
@@ -53,8 +53,8 @@
         MONTHLY SALARY:<input
         name="months"
         id="varA"
-          type="number "
-          class="Monthlysalary"
+          type="text "
+          class="input"
           maxlength="2"
           placeholder="Enter months per year"
         
@@ -63,16 +63,17 @@
       <div>
        
         ANNUAL SALARY:<input
-          type="number"
-          class="salaryAnnually"
-          name="salary"
+        class="input"
+        name="salary"
+        type="number"
           id="varB"
           placeholder="Enter Salary"
           maxlength="6"
-        >
-          <input type="button" value="Add" onclick="multiplyNumbers('varA', 'varB')"></input>
-          <h1 name="calculate" id="averageAnnually"></h1>
-        <button onclick="addHtmlTableRow()"onclick="multiplyNumbers(varA, varB)">ADD</button>
+        />
+        </div>
+          <input id="multiplyNumbers" type="button" value="Add" onclick="multiplyNumbers('varA', 'varB')"></input>
+          <h1  class="multiplyNumbers" name="calculate" id="averageAnnually"></h1>
+        <button onclick="addHtmlTableRow()">ADD</button>
         <button>EDIT</button>
         <button>REMOVE</button>
 
@@ -85,7 +86,7 @@
         <!-- <div class="form-action-buttons">
           <input type="SUBMIT" value="SUBMIT" />
         </div> -->
-      </div>
+      
       </div>
     </form>
     <div class="container">

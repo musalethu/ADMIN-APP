@@ -7,15 +7,6 @@ var form = [];
 
 var rIndex;
 
-// function calcSalary() {
-//   var salary_element = document.getElementById("Monthlysalary");
-//   var salary = parseInt(salary_element.value);
-//   var annually_element = document.getElementById("salaryAnnually");
-//   var annually = parseInt(annually_element.value);
-
-//   var calculate = salary * annually * 12;
-//   document.getElementById("CALCULATE").innerHTML = calculate;
-// }
 // function validateID() {
 //   var cb = document.forms["pleasevalidateID"]["idnumber"].checked;
 //   if (cb) {
@@ -49,20 +40,24 @@ function addHtmlTableRow() {
     cell6 = newRow.insertCell(5),
     cell7 = newRow.insertCell(6),
     
+
     name = document.getElementById("name").value;
     surname = document.getElementById("surname").value;
     Position = document.getElementById("Position").value;
     IDnumber = document.getElementById("IDnumber").value;
     varA = document.getElementById("varA").value;
     varB = document.getElementById("varB").value;
-    averageAnnually= document.getElementById("averageAnnually").value
-
+  averageAnnually = document.getElementById("averageAnnually").value
+  
+  cell1.innerHTML = name;
   cell2.innerHTML = surname;
   cell3.innerHTML = Position;
   cell4.innerHTML = IDnumber;
   cell5.innerHTML = varA;
   cell6.innerHTML = varB;
   cell7.innerHTML = averageAnnually
+  cell8.innerHTML = `<h1 id="averageAnnually"></h1>`
+
  
 }
 function multiplyNumbers(varA, varB) {
@@ -86,6 +81,7 @@ function displaysEmployeeInfo() {
       //  <h5>${employeeList[i].varA} </h5>
       //    <h6>${employeeList[i].varB} </h6>
         <h7>${employeeList[i].averageAnnually}</h7>
+        
         </li>`;
   }
     //   var formData = readformData();
